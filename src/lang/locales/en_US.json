@@ -1,0 +1,16 @@
+{
+    "home": "Home",
+
+    "sidenav.dashboard.timetable": "Timetable",
+    "sidenav.dashboard.tutors": "Tutors",
+    "sidenav.dashboard.students": "Students",
+    "sidenav.dashboard.reports": "Reports",
+    "sidenav.dashboard.courses": "Courses",
+
+    "sidenav.dashboard.news": "News",
+    "sidenav.dashboard.quizes": "Quizes",
+    "sidenav.dashboard.resources": "Resources",
+    "sidenav.dashboard.books": "Books",
+
+    "sidenav.dashboard.users": "Users"
+}

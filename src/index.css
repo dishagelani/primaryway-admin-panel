@@ -1,0 +1,374 @@
+:root {
+    --blue: #0cabff;
+    --lightblue: #ecf8ff;
+    --yellow: rgba(255, 195, 49, 0.8);
+    --lightyellow: #fff8e6;
+    --green: #20be30;
+    --border-color: #ebebeb;
+    --input-label-color: #626262;
+    --input-label-color2: #c4c4c4;
+    --input-text-color: #3b3b3b;
+    --avatar-background: #ecf8ff;
+}
+
+@font-face {
+    font-family: "Aller Display";
+    src: url("./assets/font/aller.display.ttf");
+}
+@font-face {
+    font-family: "Barlow";
+    src: url("./assets/font/barlow/Barlow-Regular.ttf");
+}
+@font-face {
+    font-family: "Barlow-bold";
+    src: url("./assets/font/barlow/Barlow-Bold.ttf");
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+body {
+    font-family: "Barlow";
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.loading.cover-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.loading.cover-page {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.loading .ant-spin {
+    color: var(--blue);
+}
+
+/* ----------------------------------------------button---------------------------------------------------------------- */
+
+.heading-class-button {
+    background: none !important;
+    border: none !important;
+    color: var(--blue) !important;
+    box-shadow: unset;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0;
+}
+
+/* --------------------------------------------------- sidenav ------------------------------------------------------- */
+
+.admin-sidenav .ant-menu .ant-menu-item {
+    margin-left: 25px;
+}
+
+.hover-class {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 30px;
+    top: 2px;
+    border-radius: 50%;
+    background: rgba(255, 195, 49, 0.8);
+    opacity: 0;
+}
+
+.ant-menu-item-selected .hover-class {
+    opacity: 1;
+}
+
+/* --------------------------------------------- table ------------------------------------------------------------- */
+
+.modified-table .ant-table-tbody > tr > td {
+    border-bottom: none;
+}
+.modified-table .ant-table table {
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.class-table .ant-table-thead > tr > th {
+    padding: 5px 0;
+}
+
+.class-table .ant-table-tbody > tr > td {
+    padding: 10px;
+}
+.ellipsis-dropdown {
+    font-size: 12px;
+    margin-left: 2px;
+    padding: 0;
+}
+*
+/* .ant-typography {
+    color: var(--input-text-color) !important;
+} */
+/* .ant-typography:hover {
+    color: var(--blue) !important;
+} */
+
+.attendance .ant-select:not(.ant-select-customize-input) .ant-select-selector,
+.attendance .ant-select .ant-select-single .ant-select-open {
+    min-height: 0;
+    border: none !important;
+    padding: 0 11px 0 0;
+    background: none;
+    box-shadow: none !important;
+}
+
+.attendance
+    .ant-select-single
+    .ant-select-selector
+    .ant-select-selection-placeholder,
+.attendance .ant-select .ant-select-arrow {
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.ant-select-dropdown {
+    min-width: 150px !important;
+}
+
+/* ------------------------------------------- input field ------------------------------------------------------------ */
+#float-label {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    position: relative;
+}
+
+#float-label .ant-input,
+#float-label .ant-select-selector {
+    width: 100%;
+    min-height: 50px;
+    padding: 16px 16px 0 10px;
+    outline: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: #fff;
+    font-size: 14px;
+    color: var(--input-text-color);
+}
+
+#float-label2 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#float-label2 .ant-picker-input {
+    height: 50px;
+    outline: 0;
+    border-radius: 10px;
+}
+
+#float-label2 .ant-picker-input input {
+    padding: 16px 16px 0px 10px;
+    font-family: "Barlow";
+    font-size: 13px !important;
+    color: var(--input-text-color) !important;
+}
+
+#float-label2 .ant-picker-suffix {
+    padding: 14px 16px 14px 10px;
+}
+
+#float-label label,
+#float-label2 label {
+    font-size: 14px;
+    padding: 0 12px;
+    color: var(--input-label-color);
+    pointer-events: none;
+    position: absolute;
+    transform: translateY(15px) scale(1);
+    transform-origin: top left;
+    transition: all 0.2s ease-out;
+}
+
+#float-label:focus-within label,
+#float-label .Active,
+#float-label2:focus-within label,
+#float-label2 .Active {
+    font-size: 12px;
+    transform: translateY(5px);
+    color: var(--input-label-color2);
+}
+
+#float-label:focus-within .ant-input,
+#float-label:focus-within .ant-select-selector {
+    border-bottom: 3px solid var(--blue);
+    box-shadow: none;
+}
+
+/* ------------------------------------------------------ text ------------------------------------------------------- */
+
+.form-title {
+    font-family: "Barlow-bold" !important;
+    font-size: 18px;
+    color: black;
+}
+
+.dashboard-title {
+    font-family: "Aller Display" !important;
+}
+
+.avatar-status-name,
+.avatar-status-text {
+    font-size: 14px;
+    color: var(--blue) !important;
+    font-weight: bold;
+}
+
+.Active-column-class {
+    height: 24px;
+    width: 70px;
+    border: 1px solid #20be30;
+    background: #f2fdf4;
+    color: #20be30;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+
+.Disabled-column-class {
+    height: 24px;
+    width: 70px;
+    border: 1px solid #f0372b;
+    background: #ffedec;
+    color: #f0372b;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------- card ---------------------------------------------------------- */
+
+.info-page-card .ant-card-body {
+    padding: 0;
+}
+.card-top-div {
+    height: 120px;
+    width: 100%;
+    background-position: right !important;
+}
+
+.card-top-div-content {
+    padding: 20px;
+    text-transform: capitalize;
+}
+
+.container .ant-card-body {
+    padding: 0;
+}
+
+/* ---------------------------------------------- calender ------------------------------------------------------------ */
+
+.timetable .events {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.timetable .events .ant-badge-status {
+    width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.timetable .notes-month {
+    font-size: 28px;
+    text-align: center;
+}
+.timetable .notes-month section {
+    font-size: 28px;
+}
+
+.timetable .ant-picker-date-panel .ant-picker-content th {
+    color: var(--input-label-color);
+    padding: 10px 0;
+}
+
+.timetable .ant-picker-calendar .ant-picker-panel .ant-picker-content {
+    text-align: center !important;
+}
+
+.timetable
+    .ant-picker-calendar-full
+    .ant-picker-panel
+    .ant-picker-calendar-date-content {
+    min-height: 115px !important;
+}
+
+.timetable
+    .ant-picker-calendar-full
+    .ant-picker-panel
+    .ant-picker-calendar-date {
+    border-top: none !important;
+    border-right: none !important;
+}
+.timetable .ant-picker-calendar .ant-picker-panel .ant-picker-content tbody {
+    border-left: none !important;
+    border-bottom: none !important;
+}
+.timetable .ant-picker-cell-in-view {
+    color: var(--input-text-color);
+}
+
+/* .timetable
+    .ant-picker-calendar-full
+    .ant-picker-panel
+    .ant-picker-cell-selected:hover
+    .ant-picker-calendar-date
+    .ant-picker-calendar-date-value,
+.ant-picker-calendar-full
+    .ant-picker-panel
+    .ant-picker-cell-selected:hover
+    .ant-picker-calendar-date-today
+    .ant-picker-calendar-date-value,
+.timetable
+    .ant-picker-calendar-full
+    .ant-picker-panel
+    .ant-picker-calendar-date-today
+    .ant-picker-calendar-date-value {
+    background-color: var(--blue) !important;
+    border-radius: 50%;
+} */
+
+/* .timetable
+    .ant-picker-calendar-full
+    .ant-picker-panel
+    .ant-picker-cell-selected
+    .ant-picker-calendar-date,
+.ant-picker-calendar-full
+    .ant-picker-panel
+    .ant-picker-cell-selected
+    .ant-picker-calendar-date-today {
+    background: none;
+} */
+
+.timetable .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    min-height: 40px;
+}
+
+/* -------------------------------------image-------------------------------------- */
+.img-fluid {
+    margin-top: 120px;
+}

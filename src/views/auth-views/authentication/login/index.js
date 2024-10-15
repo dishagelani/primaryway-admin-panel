@@ -5,7 +5,7 @@ import {useHistory} from "react-router-dom";
 
 const backgroundStyle = {
     backgroundImage: "url(/img/Header.jpg)",
-    backgroundRepeat: "no-repeat",
+    backgroundRepeat: "repeat-x",
 };
 
 const LoginOne = (props) => {

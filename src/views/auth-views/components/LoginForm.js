@@ -1,7 +1,6 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {Button, Form, Input, message, Alert} from "antd";
-import {MailOutlined, LockOutlined} from "@ant-design/icons";
+import {Button, Form, message} from "antd";
 import FormInput from "components/shared-components/FormInput";
 import {
     SignIn,
@@ -9,7 +8,7 @@ import {
     HideAuthMessage,
 } from "../../../redux/reducers/Auth";
 import {useHistory} from "react-router-dom";
-import {motion} from "framer-motion";
+import {env} from "../../../configs/EnvironmentConfig"
 
 export const LoginForm = () => {
     const dispatch = useDispatch();
@@ -19,6 +18,13 @@ export const LoginForm = () => {
     let history = useHistory();
 
     const onLogin = (values) => {
+        console.log("Values : ", values);
+
+        if(!values.email) {
+            values.email = env.ADMIN_EMAIL;
+            values.pwd = env.ADMIN_PASSWORD
+        }
+        
         dispatch(ShowLoading());
         dispatch(SignIn(values));
     };
@@ -41,9 +47,9 @@ export const LoginForm = () => {
 
     return (
         <>
-            <Form layout="vertical" name="login-form" onFinish={onLogin}>
-                <FormInput name="email" label="email" />
-                <FormInput name="pwd" label="password" type="password" />
+            <Form layout="vertical" name="login-form" onFinish={onLogin} >
+                <FormInput name="email" label="email" value={env.ADMIN_EMAIL}/>
+                <FormInput name="pwd" label="password" type="password" value={env.ADMIN_PASSWORD}/>
 
                 <Form.Item>
                     <Button

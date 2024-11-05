@@ -1,10 +1,13 @@
 const dev = {
     API_ENDPOINT_URL: "http://localhost:8000/api",
-    // API_ENDPOINT_URL: "http://104.248.146.26:3000/api",
+    ADMIN_EMAIL : 'disha@gmail.com',
+    ADMIN_PASSWORD : 'Disha@1234'
 };
 
 const prod = {
-    API_ENDPOINT_URL: "http://104.248.146.26:3000/api",
+    API_ENDPOINT_URL: "https://primaryway-api-production.up.railway.app/api",
+    ADMIN_EMAIL : 'admin@gmail.com',
+    ADMIN_PASSWORD : 'Admin@1234'
 };
 
 const getEnv = () => {

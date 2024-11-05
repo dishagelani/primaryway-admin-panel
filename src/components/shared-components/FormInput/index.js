@@ -269,7 +269,7 @@ const Index = ({type, label, name, value, disabledDate, form, disabled}) => {
 
     useEffect(() => {
         if (value) {
-            console.log(value);
+            console.log(value,"--------");
             setMode("EDIT");
         } else {
             setMode("ADD");

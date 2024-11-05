@@ -32,10 +32,7 @@ const LoginOne = (props) => {
                                 </Row>
 
                                 <div className="text-center">
-                                    {/* <p>
-                                        Don't have an account yet?{" "}
-                                        <a href="/auth/register">Sign Up</a>
-                                    </p> */}
+                                    
                                     <p
                                         style={{
                                             paddingLeft: 5,

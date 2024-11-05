@@ -82,7 +82,7 @@ export const HeaderNav = (props) => {
                     )}
 
                     <div className="nav-right">
-                        <NavNotification />
+                         {/* <NavNotification /> */}
                         <NavSettings />
                     </div>
                 </div>

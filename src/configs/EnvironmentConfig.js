@@ -7,7 +7,7 @@ const dev = {
 const prod = {
     API_ENDPOINT_URL: "https://primaryway-api-production.up.railway.app/api",
     ADMIN_EMAIL : 'admin@gmail.com',
-    ADMIN_PASSWORD : 'Admin@1234'
+    ADMIN_PASSWORD : 'admin@1234'
 };
 
 const getEnv = () => {

@@ -18,7 +18,6 @@ export const AddUser = createAsyncThunk(
             );
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -27,7 +26,6 @@ export const EditUser = createAsyncThunk(
     "user/edit-User",
     async (values, thunkAPI) => {
         try {
-            console.log("edit User reducer");
             const response = await axios.post(
                 `${env.API_ENDPOINT_URL}/admin/editAdmin`,
 
@@ -41,7 +39,6 @@ export const EditUser = createAsyncThunk(
 
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -51,14 +48,12 @@ export const DeleteUser = createAsyncThunk(
     "user/delete-User",
     async (_id, thunkAPI) => {
         try {
-            console.log("delete reducer");
             const response = await axios.delete(
                 `${env.API_ENDPOINT_URL}/admin/deleteAdmin/${_id}`
             );
 
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -71,10 +66,8 @@ export const GetUserByID = createAsyncThunk(
             const response = await axios.get(
                 `${env.API_ENDPOINT_URL}/admin/getAdminById/${values}`
             );
-            console.log("get User response", response);
             if (response.status == 200) return response.data.User;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -84,7 +77,6 @@ export const adminDetails = createAsyncThunk(
     "users/adminDetails",
     async (thunkAPI) => {
         try {
-            console.log("admin reducer");
             const response = await axios.get(
                 `${env.API_ENDPOINT_URL}/admin/getAdminDetails`,
 
@@ -98,7 +90,6 @@ export const adminDetails = createAsyncThunk(
             );
             if (response.status === 200) return response.data.admin;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }

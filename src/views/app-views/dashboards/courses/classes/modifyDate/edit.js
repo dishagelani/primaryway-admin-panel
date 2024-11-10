@@ -33,7 +33,6 @@ const EditDate = ({date, classId, courseId}) => {
     const onFinish = () => {
         form.validateFields()
             .then((values) => {
-                console.log(values);
                 dispatch(
                     EditDateInClass({
                         _id: classId,

@@ -12,7 +12,6 @@ export const FormDetails = ({form, quiz}) => {
     const onFinish = () => {
         form.validateFields()
             .then((values) => {
-                console.log(values);
                 dispatch(
                     EditQuiz({values, classId: quiz._id, quizId: quiz.quiz._id})
                 );

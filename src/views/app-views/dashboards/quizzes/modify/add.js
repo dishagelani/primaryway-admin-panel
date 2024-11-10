@@ -11,7 +11,6 @@ export const FormDetails = ({form}) => {
     const onFinish = () => {
         form.validateFields()
             .then((values) => {
-                console.log(values);
                 dispatch(
                     AddQuiz({
                         date: values.date,

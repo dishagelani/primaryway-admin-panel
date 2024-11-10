@@ -13,7 +13,6 @@ export const AddQuiz = createAsyncThunk(
             );
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -29,7 +28,6 @@ export const EditQuiz = createAsyncThunk(
             );
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -59,7 +57,6 @@ export const GetQuizByID = createAsyncThunk(
 
             if (response.status == 200) return response.data.quiz;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }

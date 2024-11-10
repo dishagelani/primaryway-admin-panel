@@ -18,7 +18,6 @@ export const LoginForm = () => {
     let history = useHistory();
 
     const onLogin = (values) => {
-        console.log("Values : ", values);
 
         if(!values.email) {
             values.email = env.ADMIN_EMAIL;

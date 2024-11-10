@@ -23,7 +23,6 @@ export const FormDetails = ({form, flag, resource}) => {
                 if (image?.imageFile)
                     formData.append("resource", image.imageFile);
 
-                console.log(...formData);
                 dispatch(EditResource({values: formData, _id: resource._id}));
             })
             .catch((info) => {

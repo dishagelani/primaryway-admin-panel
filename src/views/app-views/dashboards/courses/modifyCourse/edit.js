@@ -24,7 +24,6 @@ const FormDetails = ({form, course, flag}) => {
                 if (image?.imageFile)
                     formData.append("coursePicture", image.imageFile);
 
-                console.log("formData", ...formData);
                 dispatch(EditCourse({values: formData, id: course?._id}));
             })
             .catch((info) => {

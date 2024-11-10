@@ -51,7 +51,6 @@ const Modify = () => {
 
                 if (image.imageFile)
                     formData.append("adminProfile", image.imageFile);
-                console.log("formdata", ...formData);
 
                 if (mode == "EDIT") {
                     formData.append("_id", user?._id);
@@ -71,7 +70,6 @@ const Modify = () => {
 
     useEffect(() => {
         if (showMessage) {
-            console.log(errorMessage);
             message.error({content: errorMessage, duration: 2});
             setTimeout(() => {
                 dispatch(HideErrorMessage());
@@ -81,7 +79,6 @@ const Modify = () => {
 
     useEffect(() => {
         if (success) {
-            console.log(successMessage);
             if (mode == "EDIT") {
             }
             if (mode == "ADD") {

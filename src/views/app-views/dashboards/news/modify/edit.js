@@ -22,7 +22,6 @@ export const FormDetails = ({form, flag, news}) => {
 
                 if (image?.imageFile) formData.append("news", image.imageFile);
 
-                console.log(...formData);
                 dispatch(EditNews({values: formData, _id: news._id}));
             })
             .catch((info) => {

@@ -22,7 +22,6 @@ export const FormDetails = ({form, flag, book}) => {
 
                 if (image?.imageFile) formData.append("book", image.imageFile);
 
-                console.log(...formData);
                 dispatch(EditBook({values: formData, _id: book._id}));
             })
             .catch((info) => {

@@ -13,7 +13,6 @@ export const AddReport = createAsyncThunk(
             );
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -29,7 +28,6 @@ export const EditReport = createAsyncThunk(
             );
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -39,7 +37,6 @@ export const DeleteReport = createAsyncThunk(
     "Report/delete-report",
     async (_id, thunkAPI) => {
         try {
-            console.log("delete reducer");
             const response = await axios.delete(
                 `${env.API_ENDPOINT_URL}/report/deleteReport/${_id}`
             );
@@ -57,10 +54,8 @@ export const GetReportByID = createAsyncThunk(
             const response = await axios.get(
                 `${env.API_ENDPOINT_URL}/report/getReportById/${_id}`
             );
-            console.log("get Report response", response);
             if (response.status == 200) return response.data.report;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }

@@ -17,7 +17,6 @@ export const AddNews = createAsyncThunk(
             );
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -38,7 +37,6 @@ export const EditNews = createAsyncThunk(
             );
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -48,7 +46,6 @@ export const DeleteNews = createAsyncThunk(
     "news/delete-News",
     async (_id, thunkAPI) => {
         try {
-            console.log("delete reducer");
             const response = await axios.delete(
                 `${env.API_ENDPOINT_URL}/news/deleteNews/${_id}`
             );

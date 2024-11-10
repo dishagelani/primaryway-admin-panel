@@ -70,7 +70,6 @@ export const RegisterForm = (props) => {
     const onSignUp = () => {
         form.validateFields()
             .then((values) => {
-                console.log("values", values);
                 dispatch(ShowLoading());
                 dispatch(SignUp({values}));
             })

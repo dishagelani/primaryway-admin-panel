@@ -95,7 +95,6 @@ const Quiz = () => {
             `${env.API_ENDPOINT_URL}/quiz/getQuizes`
         );
 
-        console.log(response.data.quizes);
         setQuiz(response.data.quizes);
     }, [success]);
 

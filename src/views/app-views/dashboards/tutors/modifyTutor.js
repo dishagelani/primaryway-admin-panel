@@ -37,7 +37,6 @@ const Modify = () => {
         form.validateFields()
             .then((values) => {
                 let formData = new FormData();
-                console.log(values);
                 if (values.status == undefined) {
                     mode == "EDIT"
                         ? formData.append("status", tutor.status)
@@ -53,7 +52,6 @@ const Modify = () => {
                 if (image.imageFile)
                     formData.append("tutorPicture", image.imageFile);
 
-                console.log(...formData);
 
                 if (mode == "EDIT") {
                     formData.append("_id", tutor?._id);

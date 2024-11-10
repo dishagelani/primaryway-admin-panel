@@ -18,7 +18,6 @@ export const AddStudent = createAsyncThunk(
             );
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -39,7 +38,6 @@ export const EditStudent = createAsyncThunk(
             );
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -49,7 +47,6 @@ export const DeleteStudent = createAsyncThunk(
     "student/delete-student",
     async (values, thunkAPI) => {
         try {
-            console.log("delete reducer");
             const response = await axios.delete(
                 `${env.API_ENDPOINT_URL}/student/deleteStudent/${values}`
             );
@@ -67,10 +64,8 @@ export const GetStudentByID = createAsyncThunk(
             const response = await axios.get(
                 `${env.API_ENDPOINT_URL}/student/getStudentById/${values}`
             );
-            console.log("get student response", response);
             if (response.status == 200) return response.data.student;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }

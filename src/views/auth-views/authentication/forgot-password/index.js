@@ -24,7 +24,6 @@ const ForgotPassword = () => {
         (state) => state.auth
     );
     const onSend = (values) => {
-        console.log(values);
         dispatch(ForgetPassword(values));
     };
     useEffect(() => {

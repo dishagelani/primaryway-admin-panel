@@ -78,7 +78,6 @@ const TutorInfo = () => {
         const response = await axios.get(
             `${env.API_ENDPOINT_URL}/student/getStudents`
         );
-        console.log("students", response.data.students);
         setStudents(response.data.students);
     }, []);
 

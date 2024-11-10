@@ -32,7 +32,6 @@ const AddDate = ({classId, courseId}) => {
     const onFinish = () => {
         form.validateFields()
             .then((values) => {
-                console.log(values);
                 dispatch(
                     AddDateInClass({
                         _id: classId,

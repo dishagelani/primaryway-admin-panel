@@ -248,28 +248,24 @@ const Index = ({type, label, name, value, disabledDate, form, disabled}) => {
             const response = await axios.get(
                 `${env.API_ENDPOINT_URL}/tutor/getTutors`
             );
-            console.log("forminput", response);
             setTutors(response.data.tutors);
         }
         if (name == "student") {
             const response = await axios.get(
                 `${env.API_ENDPOINT_URL}/student/getStudents`
             );
-            console.log("forminput", response);
             setStudents(response.data.students);
         }
         if (name == "course" || name == "class") {
             const response = await axios.get(
                 `${env.API_ENDPOINT_URL}/course/getCourses`
             );
-            console.log("forminput", response);
             setCourses(response.data.courses);
         }
     }, [name, value]);
 
     useEffect(() => {
         if (value) {
-            console.log(value,"--------");
             setMode("EDIT");
         } else {
             setMode("ADD");

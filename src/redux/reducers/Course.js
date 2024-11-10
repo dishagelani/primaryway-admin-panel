@@ -95,7 +95,6 @@ export const EditClass = createAsyncThunk(
     "tutor/edit-class",
     async ({_id, values}, thunkAPI) => {
         try {
-            console.log(values);
             const response = await axios.post(
                 `${env.API_ENDPOINT_URL}/class/editClass/${_id}`,
                 values
@@ -103,7 +102,6 @@ export const EditClass = createAsyncThunk(
 
             if (response.status == 200) return response;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -174,7 +172,6 @@ export const RemoveDateFromClass = createAsyncThunk(
                 `${env.API_ENDPOINT_URL}/class/deleteDateFromClass/${_id}/${dateId}`
             );
         } catch (e) {
-            console.log("errr", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -204,7 +201,6 @@ export const RemoveStudentFromClass = createAsyncThunk(
                 `${env.API_ENDPOINT_URL}/class/deleteStudentFromClass/${_id}/${studentId}`
             );
         } catch (e) {
-            console.log("errr", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }

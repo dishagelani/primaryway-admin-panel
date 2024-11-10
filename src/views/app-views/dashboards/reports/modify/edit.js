@@ -11,7 +11,6 @@ export const FormDetails = ({form, report}) => {
     const onFinish = () => {
         form.validateFields()
             .then((values) => {
-                console.log(values);
 
                 dispatch(EditReport({_id: report._id, values: values}));
             })

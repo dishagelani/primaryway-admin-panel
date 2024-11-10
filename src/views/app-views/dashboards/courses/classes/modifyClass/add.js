@@ -12,7 +12,6 @@ const ADD = ({courseId}) => {
     const onfinish = () => {
         form.validateFields()
             .then((values) => {
-                console.log(values, courseId);
                 dispatch(
                     AddClass({
                         _id: courseId,

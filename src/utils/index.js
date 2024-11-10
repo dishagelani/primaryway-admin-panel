@@ -147,7 +147,6 @@ class Utils {
      * @return {any} a value minus b value
      */
     static antdTableSorter(a, b, key, subkey) {
-        // console.log(a[key][subkey]);
         if (typeof a[key] === "number" && typeof b[key] === "number") {
             return a[key] - b[key];
         } else if (typeof a[key] === "string" && typeof b[key] === "string") {

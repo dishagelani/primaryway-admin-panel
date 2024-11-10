@@ -28,7 +28,6 @@ export const AppLayout = ({location, direction}) => {
         navigationConfig,
         location.pathname
     );
-    // console.log("currentRouteInfo", currentRouteInfo);
     const screens = utils.getBreakPoint(useBreakpoint());
     const isMobile = screens.length === 0 ? false : !screens.includes("lg");
     const isNavSide = navType === NAV_TYPE_SIDE;

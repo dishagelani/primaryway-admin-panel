@@ -6,7 +6,7 @@ import {EditClass} from "redux/reducers/Course";
 import FormInput from "components/shared-components/FormInput";
 
 export const EDIT = ({classData}) => {
-    console.log(classData);
+   
     const [visible, setVisible] = useState(false);
     const dispatch = useDispatch();
     const {editSuccess} = useSelector((state) => state.course);

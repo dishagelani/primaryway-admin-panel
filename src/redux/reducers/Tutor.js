@@ -18,7 +18,6 @@ export const AddTutor = createAsyncThunk(
             );
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -27,7 +26,6 @@ export const EditTutor = createAsyncThunk(
     "tutor/edit-Tutor",
     async (values, thunkAPI) => {
         try {
-            console.log("edit tutor reducer");
             const response = await axios.post(
                 `${env.API_ENDPOINT_URL}/tutor/EditTutor`,
 
@@ -41,7 +39,6 @@ export const EditTutor = createAsyncThunk(
 
             if (response.status == 200) return response.data.message;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }
@@ -51,7 +48,6 @@ export const DeleteTutor = createAsyncThunk(
     "tutor/delete-tutor",
     async (values, thunkAPI) => {
         try {
-            console.log("delete reducer");
             const response = await axios.delete(
                 `${env.API_ENDPOINT_URL}/tutor/deleteTutor/${values}`
             );
@@ -70,10 +66,8 @@ export const GetTutorByID = createAsyncThunk(
             const response = await axios.get(
                 `${env.API_ENDPOINT_URL}/tutor/getTutorById/${values}`
             );
-            console.log("get tutor response", response);
             if (response.status == 200) return response.data.tutor;
         } catch (e) {
-            console.log("error", e.response);
             return thunkAPI.rejectWithValue(e.response);
         }
     }

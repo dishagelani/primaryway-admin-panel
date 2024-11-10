@@ -96,7 +96,6 @@ const User = () => {
         );
         setUsers(response.data.admins);
     }, [success]);
-    console.log("success", success);
     useEffect(() => {
         if (showMessage) {
             message.error({content: errorMessage, duration: 2});
@@ -108,7 +107,6 @@ const User = () => {
 
     useEffect(() => {
         if (success) {
-            console.log(successMessage);
             message.success({content: successMessage, duration: 2});
 
             setTimeout(() => {

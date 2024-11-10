@@ -5,7 +5,6 @@ export const SignUp = createAsyncThunk(
     "auth/SignUp",
     async ({values}, thunkAPI) => {
         try {
-            console.log("values", values);
             const response = await axios.post(
                 `${env.API_ENDPOINT_URL}/auth/registerAdmin`,
                 values
@@ -20,7 +19,6 @@ export const SignIn = createAsyncThunk(
     "auth/SignIn",
     async (values, thunkAPI) => {
         try {
-            console.log("values", values, "env", env);
             const response = await axios.post(
                 `${env.API_ENDPOINT_URL}/auth/loginAdmin`,
                 values
@@ -46,7 +44,6 @@ export const ForgetPassword = createAsyncThunk(
                 `${env.API_ENDPOINT_URL}/auth/forgetAdmin`,
                 values
             );
-            console.log(response);
             if (response.status === 200) return response.data.message;
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response);
@@ -58,7 +55,6 @@ export const ChangeAdminPassword = createAsyncThunk(
     "auth/change-password",
     async (values, thunkAPI) => {
         try {
-            console.log("reducer----------");
             const response = await axios.post(
                 `${env.API_ENDPOINT_URL}/auth/changeAdminPassword`,
                 values,
@@ -70,7 +66,6 @@ export const ChangeAdminPassword = createAsyncThunk(
                     },
                 }
             );
-            console.log(response);
             if (response.status === 200) return response.data.message;
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response);
@@ -82,7 +77,6 @@ export const editProfile = createAsyncThunk(
     "auth/edit-profile",
     async (values, thunkAPI) => {
         try {
-            console.log("edit profile reducer");
             const response = await axios.post(
                 `${env.API_ENDPOINT_URL}/admin/editAdminProfile`,
                 values,
@@ -176,7 +170,6 @@ let slice = createSlice({
             state.errorMessage = payload.data.message;
         },
         [editProfile.fulfilled]: (state, {payload}) => {
-            console.log("edit payload", payload);
             state.status = payload.status;
             state.success = true;
         },
